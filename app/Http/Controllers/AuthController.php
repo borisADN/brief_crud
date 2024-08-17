@@ -17,7 +17,7 @@ class AuthController extends Controller
     }
     public function handle_add_user(Request $request)
     {
-        //   return $request;
+
 
         $user = new User();
         $user->name = $request->name;
@@ -27,25 +27,23 @@ class AuthController extends Controller
         $user->save();
         Mail::to($request->email)->send(new AccountMail($request->password));
         return redirect()->route('users')->with('success', 'Utilisateur ajouté');;
-
     }
     public function edit_user($id)
     {
-    $user=User::findOrFail($id);
+        $user = User::findOrFail($id);
         return view('admin.edit-user', [
             'user' => $user,
         ]);
-        
     }
-    public function handle_login(Request $request){
-        $credentials = $request->only('email', 'password');
-        // return $credentials;
+    public function handle_login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');;
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            
-        //    setcookie('user_id', $user->id, time() + (86400 * 30), '/');
+
+
             return redirect()->route('users')->with('message', 'Connexion réussie !')->with('alert-type', 'success');
-        }else{
+        } else {
             return 'no';
         }
     }
@@ -54,10 +52,8 @@ class AuthController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->update();
-    
-    
-return redirect()->route('users')->with('success', 'Utilisateur mis a jour!');;
 
 
+        return redirect()->route('users')->with('success', 'Utilisateur mis a jour!');;
     }
 }

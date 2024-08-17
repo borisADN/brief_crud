@@ -16,23 +16,14 @@
 <section class="form__section">
 
     <div class="container form__section-container">
-        {{-- <?php if (isset($_SESSION['edit-user'])) : ?>
-            <div class="alert__message error " style="text-align: center;">
-                <p><?php echo $_SESSION['edit-user'];
-                    unset($_SESSION['edit-user']); ?></p>
-
-            </div>
-        <?php endif; ?> --}}
+       
         <h2>Modifier un utilisateur</h2>
 
         <form action="{{ route('edit_user.process',$user->id) }}" method="POST">
             @csrf
             @method('POST')
             <input type="text" name="name" value="{{$user->name}}" placeholder="nouveau nom">
-            {{-- <input type="hidden" name="id" value="{{ $user->id }}" placeholder="First Name"> --}}
-            {{-- <input type="text" name="lastname" value="" placeholder="Last Name"> --}}
-            {{-- <input type="password" name="createpassword" value="" placeholder="Create password"> --}}
-          
+           
 
             <button type="submit" name="submit" class="btn">Modifier</button>
 

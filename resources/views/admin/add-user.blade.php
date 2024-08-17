@@ -17,18 +17,10 @@
     <section class="form__section">
         <div class="container form__section-container">
             <h2>Ajouter un utilisateur</h2>
-            {{-- <?php if (isset($_SESSION['add-user'])) : ?>
-                    <div class="alert__message error">
-                        <p><?php echo $_SESSION['add-user'];
-                        unset($_SESSION['add-user']);
-                        ?></p>
-                    </div>
-                <?php endif;?> --}}
+         
             <form action="{{ route('add_user.process') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="text" name="name" value="" placeholder="Nom Complet">
-                {{-- <input type="text"name="lastname" value="" placeholder="Last Name"> --}}
-                {{-- <input type="text" name="username" value="" placeholder="Username"> --}}
                 <input type="email" name="email" value="" placeholder="Email">
                 <input type="password" name="password" value="" placeholder="Mot de Passe">
                 <input type="hidden" name="role" value="0" placeholder="Confirmer Mot de Passe">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -12,7 +13,7 @@ class MainController extends Controller
     }
     public function manage_users(){
         $data = User::where('email', '!=', 'edemwomagno@gmail.com')->get();
-        // $exist = User::where('email', '!=', 'edemwomagno@gmail.com') ;
+      
         return view('admin.index',[
             'users' => $data,
         ]
@@ -20,8 +21,10 @@ class MainController extends Controller
       
     }
 
-    public function logout(){
-        
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 
     public function delete($id) {

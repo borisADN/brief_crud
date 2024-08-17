@@ -32,14 +32,14 @@
             <aside>
                 <ul>
     
-    
-    
-    
                     <li><a href="#" class="active"><i class="uil uil-users-alt"></i>
                             <h5>Gestion des utilisateurs</h5>
                         </a></li>
                     <li><a href="{{ route('add_user') }}"><i class="uil uil-user-plus"></i>
                             <h5>Ajouter un utilisateur</h5>
+                        </a></li>
+                    <li><a href="{{ route('logout') }}" onclick="return confirm('Êtes-vous sûr(e) de vouloir vous deconnecter? ')"><i class="uil uil-signout"></i>
+                            <h5>DECONNEXION</h5>
                         </a></li>
     
                 </ul>
@@ -51,10 +51,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>Nom</th>
                                 <th>Email</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Modifier</th>
+                                <th>Retirer</th>
     
                             </tr>
                         </thead>
