@@ -12,8 +12,10 @@ class MainController extends Controller
         return view('login');
     }
     public function manage_users(){
-        $data = User::where('email', '!=', 'edemwomagno@gmail.com')->get();
-      
+        $data = User::where('is_admin', '!=', '1')
+        ->orderBy('created_at', 'desc')
+        ->get();
+    
         return view('admin.index',[
             'users' => $data,
         ]

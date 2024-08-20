@@ -4,12 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('admin.index');
-//     // return bors;
-// });
 
-// other routes
 Route::get('/', [MainController::class, 'login'])->name('login');
 Route::get('/manage_users', [MainController::class, 'manage_users'])->name('users');
 
@@ -19,7 +14,7 @@ Route::get('/add_user', [AuthController::class, 'add_user'])->name('add_user');
 Route::post('/add_user', [AuthController::class, 'handle_add_user'])->name('add_user.process');
 
 // Si un jour tout est efface dans la base de donnees 
-// l'admin doit se connecter avec l'email edemwomagno@gmail.com 
+// l'admin doit se connecter avec is_admin = 1
 // tres important
 
 // identiiant actuels password 0000

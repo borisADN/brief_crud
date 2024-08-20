@@ -17,8 +17,6 @@ class AuthController extends Controller
     }
     public function handle_add_user(Request $request)
     {
-
-
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -40,8 +38,6 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');;
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-
-
             return redirect()->route('users')->with('message', 'Connexion réussie !')->with('alert-type', 'success');
         } else {
             return 'no';
@@ -52,7 +48,6 @@ class AuthController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->update();
-
 
         return redirect()->route('users')->with('success', 'Utilisateur mis a jour!');;
     }

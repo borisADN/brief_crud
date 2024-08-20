@@ -26,7 +26,7 @@
             <form action="{{ route('login.process') }}" method="POST" >
                 @csrf
                 @method('POST')
-                <input type="text" name="email" value="" placeholder="Email">
+                <input type="text" name="email" value="" placeholder="Email"> 
 
                 <input type="password" name="password" value="" placeholder="Mot de passe">
                 <button type="submit" name="submit" class="btn">Se Connecter</button>

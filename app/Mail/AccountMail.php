@@ -30,19 +30,10 @@ class AccountMail extends Mailable
     {
         return new Envelope(
             subject: 'Notification pour creation de compte ',
-            from: new Address('accounts@unetah.net', 'no reply ADN'),
+            from: new Address('accounts@unetah.net', 'no reply '),
         );
     }
-    //chrisb.boy89@gmail.com
-
-    // public function envelope():Envelope
-    // {
-    //     return new Envelope(
-    //         subject: 'Code de Confirmation',
-    //         from: new Address('accounts@unetah.net', 'no reply ADN'),
-    //     );
-    // }
-
+  
     /**
      * Get the message content definition.
      */
@@ -56,16 +47,7 @@ class AccountMail extends Mailable
         );
     }
 
-    // public function content():Content
-    // {
-    //     return new Content(
-    //         view: 'mails.otpcode',
-    //         with : [
-    //             'name' => $this->name,
-    //             'code' => $this->code,
-    //         ],
-    //     );
-    // }
+   
 
     /**
      * Get the attachments for the message.
