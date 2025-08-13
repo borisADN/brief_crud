@@ -40,6 +40,7 @@ class AuthController extends Controller
             $user = Auth::user();
             return redirect()->route('users')->with('message', 'Connexion réussie !')->with('alert-type', 'success');
         } else {
+            // return redirect()->route('users')->with('message', 'Connexion réussie !')->with('alert-type', 'success');
             return 'no';
         }
     }
